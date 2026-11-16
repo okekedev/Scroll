@@ -83,10 +83,10 @@ name) and a handful of small topic terms.
 | Name (30 max) | `Scroll: Bible Narrator` | `Scroll: Fruit of the Spirit` (27) |
 | Subtitle (30 max) | `Bible verses read aloud` | `Bible verses by topic to share` (30) |
 
-Keywords (104/100; no words repeated from the name or subtitle, since Apple combines all three):
+Keywords (98/100; no words repeated from the name or subtitle, since Apple combines all three):
 
 ```
-scripture,esv,kjv,nlt,nasb,topical,virtues,love,joy,peace,patience,kindness,faith,galatians,quotes,daily
+scripture,esv,kjv,nlt,nasb,topical,virtues,love,joy,peace,patience,kindness,faith,galatians,quotes
 ```
 
 Not yet known: search volume and difficulty for these terms. Astro (the keyword tool) is only
