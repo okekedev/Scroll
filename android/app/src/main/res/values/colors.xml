@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Window background shown before Compose draws its first frame. -->
+    <color name="window_background">#FFFFFF</color>
+    <!-- Dark brown sampled from the icon photo; sits behind the adaptive icon foreground. -->
+    <color name="ic_launcher_background">#2B1509</color>
+</resources>

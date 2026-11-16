@@ -1,0 +1,10 @@
+# The repo root .gitignore already covers build folders, local.properties,
+# the keystore, *.aab and *.apk. These are the Android extras it does not list.
+.gradle/
+.kotlin/
+.idea/
+*.iml
+build/
+captures/
+local.properties
+keystore/
