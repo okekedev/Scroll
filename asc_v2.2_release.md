@@ -59,6 +59,23 @@ PRIVATE AND FREE
 • Everything you save stays on your device
 ```
 
+## Name, subtitle and keywords (the app is read-only; no voice reader)
+
+The live listing is named "Scroll: Bible Narrator" with the subtitle "Bible verses read aloud",
+and its keywords include `voice` and `narrator`. The app has no audio. Proposed for 2.2
+(needs the owner's OK before it is pushed):
+
+| Field | Live | Proposed |
+|---|---|---|
+| Name (30 max) | `Scroll: Bible Narrator` | `Scroll: Bible Verses` |
+| Subtitle (30 max) | `Bible verses read aloud` | `Read, save and share verses` |
+
+Keywords (100 max):
+
+```
+bible,scripture,verse,daily,esv,kjv,christian,gospel,jesus,pray,faith,fruits,love,peace,psalm,share
+```
+
 ## Promotional Text
 
 ```
