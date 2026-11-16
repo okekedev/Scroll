@@ -16,10 +16,19 @@ enum VerseTextFormatter {
     }
 }
 
-/// The text handed to the share sheet (and the clipboard) for a single verse.
+/// The text handed to the share sheet (and the clipboard) for a single verse:
+/// the verse, its reference, and a link that opens it on the Scroll website.
+/// The Android app and the website produce the same three parts.
 enum VerseShare {
+    static let siteURL = "https://scroll.okeke.us"
+
     static func text(_ verseText: String, book: Int, chapter: Int, verse: Int, translation: String) -> String {
-        "\(verseText)\n\n\(BibleBooks.name(for: book)) \(chapter):\(verse) (\(translation))"
+        """
+        \(verseText)
+
+        \(BibleBooks.name(for: book)) \(chapter):\(verse) (\(translation))
+        \(siteURL)/\(translation)/\(book)/\(chapter)/\(verse)
+        """
     }
 
     static func text(for verse: BibleVerse) -> String {
