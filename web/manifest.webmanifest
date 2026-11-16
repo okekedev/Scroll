@@ -1,0 +1,13 @@
+{
+  "name": "Scroll",
+  "short_name": "Scroll",
+  "description": "Read the Bible a chapter at a time and find verses on the Fruits of the Spirit.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F5F8F7",
+  "theme_color": "#F5F8F7",
+  "icons": [
+    { "src": "/img/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/img/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
