@@ -12,6 +12,7 @@ struct ChapterView: View {
     @State private var chapterVerses: [ChapterVerse] = []
     @State private var isLoading = true
     @State private var toastMessage: String? = nil
+    @State private var didScrollToTarget = false
 
     init(verse: BibleVerse) {
         self.initialTranslation = BibleTranslations.resolve(verse.translation)
@@ -114,47 +115,66 @@ struct ChapterView: View {
     }
 
     private var chapterContentView: some View {
-        ScrollView {
-            LazyVStack(alignment: .leading, spacing: 0) {
-                ForEach(Array(chapterVerses.enumerated()), id: \.element.id) { _, chapterVerse in
-                    let isSelectedVerse = targetVerse != nil && chapterVerse.verse == targetVerse && currentBook == initialBook && currentChapter == initialChapter
-
-                    HStack(alignment: .top, spacing: 12) {
-                        Text("\(chapterVerse.verse)")
-                            .font(Theme.Typography.verseNumber())
-                            .foregroundColor(isSelectedVerse ? Theme.Colors.accent : .secondary)
-                            .frame(width: 28, alignment: .trailing)
-
-                        Text(chapterVerse.text)
-                            .font(Theme.Typography.body())
-                            .foregroundColor(.primary)
-                            .lineSpacing(Theme.LineSpacing.verse)
-                            .fixedSize(horizontal: false, vertical: true)
-                    }
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.horizontal, Theme.Layout.horizontalPadding)
-                    .padding(.vertical, 12)
-                    .background(
-                        RoundedRectangle(cornerRadius: 8)
-                            .fill(isSelectedVerse ? Theme.Colors.accentMedium : Color.clear)
-                    )
-                    .contentShape(Rectangle())
-                    .contextMenu {
-                        ShareLink(item: shareText(for: chapterVerse)) {
-                            Label("Share Verse", systemImage: "square.and.arrow.up")
-                        }
-                        Button {
-                            UIPasteboard.general.string = shareText(for: chapterVerse)
-                            toastMessage = "Verse Copied"
-                        } label: {
-                            Label("Copy Verse", systemImage: "doc.on.doc")
-                        }
-                    }
-                    .readingColumn()
-                }
+        ScrollViewReader { proxy in
+            ScrollView {
+                chapterVersesView
             }
-            .padding(.vertical, 8)
+            .onAppear { scrollToTargetVerse(with: proxy) }
         }
+    }
+
+    /// Opening a chapter from a verse brings that verse into view (once).
+    private func scrollToTargetVerse(with proxy: ScrollViewProxy) {
+        guard !didScrollToTarget,
+              let targetVerse,
+              currentBook == initialBook, currentChapter == initialChapter,
+              let target = chapterVerses.first(where: { $0.verse == targetVerse }) else { return }
+        didScrollToTarget = true
+        DispatchQueue.main.async {
+            proxy.scrollTo(target.id, anchor: .center)
+        }
+    }
+
+    private var chapterVersesView: some View {
+        LazyVStack(alignment: .leading, spacing: 0) {
+            ForEach(Array(chapterVerses.enumerated()), id: \.element.id) { _, chapterVerse in
+                let isSelectedVerse = targetVerse != nil && chapterVerse.verse == targetVerse && currentBook == initialBook && currentChapter == initialChapter
+
+                HStack(alignment: .top, spacing: 12) {
+                    Text("\(chapterVerse.verse)")
+                        .font(Theme.Typography.verseNumber())
+                        .foregroundColor(isSelectedVerse ? Theme.Colors.accent : .secondary)
+                        .frame(width: 28, alignment: .trailing)
+
+                    Text(chapterVerse.text)
+                        .font(Theme.Typography.body())
+                        .foregroundColor(.primary)
+                        .lineSpacing(Theme.LineSpacing.verse)
+                        .fixedSize(horizontal: false, vertical: true)
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(.horizontal, Theme.Layout.horizontalPadding)
+                .padding(.vertical, 12)
+                .background(
+                    RoundedRectangle(cornerRadius: 8)
+                        .fill(isSelectedVerse ? Theme.Colors.accentMedium : Color.clear)
+                )
+                .contentShape(Rectangle())
+                .contextMenu {
+                    ShareLink(item: shareText(for: chapterVerse)) {
+                        Label("Share Verse", systemImage: "square.and.arrow.up")
+                    }
+                    Button {
+                        UIPasteboard.general.string = shareText(for: chapterVerse)
+                        toastMessage = "Verse Copied"
+                    } label: {
+                        Label("Copy Verse", systemImage: "doc.on.doc")
+                    }
+                }
+                .readingColumn()
+            }
+        }
+        .padding(.vertical, 8)
     }
 
     private func shareText(for chapterVerse: ChapterVerse) -> String {
