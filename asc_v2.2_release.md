@@ -59,22 +59,45 @@ PRIVATE AND FREE
 • Everything you save stays on your device
 ```
 
-## Name, subtitle and keywords (the app is read-only; no voice reader)
+## Name, subtitle and keywords (needs the owner's OK before it is pushed)
 
-The live listing is named "Scroll: Bible Narrator" with the subtitle "Bible verses read aloud",
-and its keywords include `voice` and `narrator`. The app has no audio. Proposed for 2.2
-(needs the owner's OK before it is pushed):
+The live listing is "Scroll: Bible Narrator" / "Bible verses read aloud" with `voice` and
+`narrator` in the keywords, but the app is read-only. Where Scroll ranked in US App Store
+search on 2026-11-16 (Apple's public search API, top 200 results):
+
+| Search term | Scroll's position | Who is on top |
+|---|---|---|
+| fruits of the spirit | 7 | apps with 0 to 2 ratings (plus Fruit Ninja) |
+| bible narrator | 13 | audio Bibles with 130K+ ratings |
+| scroll bible | 24 | Scroll The Bible (20K ratings) |
+| fruit of the spirit | 64 | apps with 0 to 2 ratings |
+| bible verses, verse of the day, daily bible verse, scripture, esv/kjv/nlt/nasb bible, bible study, bible quotes, bible reader | not in top 200 | apps with 10K to 13M ratings |
+| bible verses by topic, share bible verse, memory verse, topical bible, christian virtues, galatians | not in top 200 | top results have 0 to a few hundred ratings |
+
+Reading: the big generic terms are out of reach for an app with 10 ratings. The winnable ones are
+the Fruit of the Spirit terms (Scroll is already page one for the plural with no help from the
+name) and a handful of small topic terms.
 
 | Field | Live | Proposed |
 |---|---|---|
-| Name (30 max) | `Scroll: Bible Narrator` | `Scroll: Bible Verses` |
-| Subtitle (30 max) | `Bible verses read aloud` | `Read, save and share verses` |
+| Name (30 max) | `Scroll: Bible Narrator` | `Scroll: Fruit of the Spirit` (27) |
+| Subtitle (30 max) | `Bible verses read aloud` | `Bible verses by topic to share` (30) |
 
-Keywords (100 max):
+Keywords (104/100; no words repeated from the name or subtitle, since Apple combines all three):
 
 ```
-bible,scripture,verse,daily,esv,kjv,christian,gospel,jesus,pray,faith,fruits,love,peace,psalm,share
+scripture,esv,kjv,nlt,nasb,topical,virtues,love,joy,peace,patience,kindness,faith,galatians,quotes,daily
 ```
+
+Not yet known: search volume and difficulty for these terms. Astro (the keyword tool) is only
+tracking Today's Desk; add Scroll there with the terms above to get those numbers before locking this in.
+
+Newer App Store options worth using after 2.2 ships (announced at WWDC25; not checked against the
+API docs):
+- **Custom product pages with keywords.** A product page variant can be tied to keywords so it
+  shows for those searches, e.g. a "verses about love" page with love screenshots.
+- **App Store Tags.** Apple generates feature tags for each app; they can be reviewed and trimmed
+  in App Store Connect.
 
 ## Promotional Text
 
