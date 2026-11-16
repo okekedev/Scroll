@@ -1,0 +1,29 @@
+# macOS
+.DS_Store
+
+# Xcode
+build/
+DerivedData/
+xcuserdata/
+*.xcuserstate
+*.ipa
+*.xcarchive
+*.dSYM.zip
+
+# Android
+android/.gradle/
+android/build/
+android/app/build/
+android/local.properties
+android/keystore/
+android/.idea/
+android/captures/
+*.jks
+*.keystore
+keystore.properties
+*.aab
+*.apk
+
+# Web
+node_modules/
+web/.swa/

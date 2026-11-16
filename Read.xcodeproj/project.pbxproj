@@ -7,46 +7,67 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AA591B242B732921002F5AC9 /* ReadApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA591B232B732921002F5AC9 /* ReadApp.swift */; };
+		11A2C06D74001DFBB80A8A27 /* VerseCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2024E20654045C11A734024 /* VerseCard.swift */; };
+		1A29944619936B2F9BB379AF /* ReadingColumn.swift in Sources */ = {isa = PBXBuildFile; fileRef = C756E3F63268B3D6773A1AB3 /* ReadingColumn.swift */; };
+		32A216411352A4E627ADFBC1 /* BollsClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111E9F4A37CA62A2A0284CDA /* BollsClient.swift */; };
+		34293C5BF024593527E53F76 /* SavedChapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5193B2430ABFD53083F6ED4F /* SavedChapter.swift */; };
+		4900B2A027C199682345A166 /* StreamingAudioService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FECA32D2FAEC8E7E1A95DCE /* StreamingAudioService.swift */; };
+		58CE1BAEDCCBCEE7540EBB33 /* ToastOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030D1A17E94154D12209351D /* ToastOverlay.swift */; };
+		9E5621D82DE2465232BF4724 /* GlassStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56DCA60550F1569B08E88F1 /* GlassStyle.swift */; };
+		A06D1EC2F04B11A0E804D068 /* BibleBrainClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92D43EE875061E7070A09C3 /* BibleBrainClient.swift */; };
+		AA241FAC2C00E9CC009344FB /* ChapterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA241FAB2C00E9CC009344FB /* ChapterView.swift */; };
 		AA591B262B732921002F5AC9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA591B252B732921002F5AC9 /* ContentView.swift */; };
 		AA591B282B732941002F5AC9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA591B272B732941002F5AC9 /* Assets.xcassets */; };
 		AA591B2B2B732941002F5AC9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA591B2A2B732941002F5AC9 /* Preview Assets.xcassets */; };
-		AA591B322B73373C002F5AC9 /* LoveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA591B312B73373B002F5AC9 /* LoveView.swift */; };
-		AA591B382B747B96002F5AC9 /* PatienceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA591B372B747B96002F5AC9 /* PatienceView.swift */; };
-		AA591B3A2B747C07002F5AC9 /* KindnessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA591B392B747C07002F5AC9 /* KindnessView.swift */; };
-		AA591B3C2B747C45002F5AC9 /* GoodnessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA591B3B2B747C45002F5AC9 /* GoodnessView.swift */; };
-		AA591B3E2B747CAB002F5AC9 /* FaithfullView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA591B3D2B747CAB002F5AC9 /* FaithfullView.swift */; };
-		AA591B402B747CEE002F5AC9 /* GentlenessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA591B3F2B747CEE002F5AC9 /* GentlenessView.swift */; };
-		AA591B422B747D1F002F5AC9 /* SelfControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA591B412B747D1F002F5AC9 /* SelfControlView.swift */; };
 		AA591B462B796C3D002F5AC9 /* SavedVerses.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA591B452B796C3D002F5AC9 /* SavedVerses.swift */; };
 		AA591B4B2B796D71002F5AC9 /* SavedVersesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA591B4A2B796D71002F5AC9 /* SavedVersesModel.swift */; };
 		AA591B4D2B7C6EF9002F5AC9 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA591B4C2B7C6EF9002F5AC9 /* NotificationView.swift */; };
-		AA591B4F2B7C714A002F5AC9 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA591B4E2B7C714A002F5AC9 /* SplashScreenView.swift */; };
-		AA591B532B7C8703002F5AC9 /* JoyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA591B522B7C8703002F5AC9 /* JoyView.swift */; };
-		AA591B552B7C8A89002F5AC9 /* PeaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA591B542B7C8A89002F5AC9 /* PeaceView.swift */; };
 		AA7D10902BC78E1400DFF127 /* BibleVerse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7D108F2BC78E1400DFF127 /* BibleVerse.swift */; };
+		AAB9F5ED2C1A9B1A0080F529 /* ReadApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB9F5EC2C1A9B1A0080F529 /* ReadApp.swift */; };
+		AAC8F6702C050E450038EFFE /* VerseChapterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC8F66F2C050E450038EFFE /* VerseChapterModel.swift */; };
+		AAD3B1012D0E123400000001 /* VirtueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD3B1002D0E123400000001 /* VirtueView.swift */; };
+		AAD3B1032D0E123400000002 /* SpeechService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD3B1022D0E123400000002 /* SpeechService.swift */; };
+		AAD3B1052D0E123400000003 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD3B1042D0E123400000003 /* SettingsView.swift */; };
+		AAD3B1072D0E123400000004 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD3B1062D0E123400000004 /* Theme.swift */; };
+		B3A8905B9F27B1CD988902CC /* SavedChaptersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913D2BF9DF5F32DD3DE9AB09 /* SavedChaptersModel.swift */; };
+		BC216D72D65B7CD889C3C467 /* BibleBrainConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A7AF0E21C4D0F779DEF8A9 /* BibleBrainConfig.swift */; };
+		BDFAC6183A483D5053369BB2 /* BibleBooks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE3B139EDB4215C41DA6E2D /* BibleBooks.swift */; };
+		C6585882C8712797C239FC60 /* SavedChapters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBEC8CE8BE253E4F5EAFD7A /* SavedChapters.swift */; };
+		C7D04719C3D4DDCC3C80B4B3 /* VoicePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8259034A7F25908BE43E25 /* VoicePicker.swift */; };
+		C8E2AA6D563BA65280FE66C0 /* VerseTextFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE0B784A1BA6AAC82274DA6 /* VerseTextFormatter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		030D1A17E94154D12209351D /* ToastOverlay.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ToastOverlay.swift; path = ToastOverlay.swift; sourceTree = "<group>"; };
+		0CBEC8CE8BE253E4F5EAFD7A /* SavedChapters.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SavedChapters.swift; path = SavedChapters.swift; sourceTree = "<group>"; };
+		0FE3B139EDB4215C41DA6E2D /* BibleBooks.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BibleBooks.swift; path = BibleBooks.swift; sourceTree = "<group>"; };
+		111E9F4A37CA62A2A0284CDA /* BollsClient.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BollsClient.swift; path = BollsClient.swift; sourceTree = "<group>"; };
+		5193B2430ABFD53083F6ED4F /* SavedChapter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SavedChapter.swift; path = SavedChapter.swift; sourceTree = "<group>"; };
+		63A7AF0E21C4D0F779DEF8A9 /* BibleBrainConfig.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BibleBrainConfig.swift; path = BibleBrainConfig.swift; sourceTree = "<group>"; };
+		913D2BF9DF5F32DD3DE9AB09 /* SavedChaptersModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SavedChaptersModel.swift; path = SavedChaptersModel.swift; sourceTree = "<group>"; };
+		9D8259034A7F25908BE43E25 /* VoicePicker.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VoicePicker.swift; path = VoicePicker.swift; sourceTree = "<group>"; };
+		9FECA32D2FAEC8E7E1A95DCE /* StreamingAudioService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StreamingAudioService.swift; path = StreamingAudioService.swift; sourceTree = "<group>"; };
+		AA241FAB2C00E9CC009344FB /* ChapterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterView.swift; sourceTree = "<group>"; };
 		AA591B202B732921002F5AC9 /* Read.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Read.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		AA591B232B732921002F5AC9 /* ReadApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadApp.swift; sourceTree = "<group>"; };
 		AA591B252B732921002F5AC9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		AA591B272B732941002F5AC9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA591B2A2B732941002F5AC9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		AA591B312B73373B002F5AC9 /* LoveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoveView.swift; sourceTree = "<group>"; };
-		AA591B372B747B96002F5AC9 /* PatienceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceView.swift; sourceTree = "<group>"; };
-		AA591B392B747C07002F5AC9 /* KindnessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KindnessView.swift; sourceTree = "<group>"; };
-		AA591B3B2B747C45002F5AC9 /* GoodnessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodnessView.swift; sourceTree = "<group>"; };
-		AA591B3D2B747CAB002F5AC9 /* FaithfullView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaithfullView.swift; sourceTree = "<group>"; };
-		AA591B3F2B747CEE002F5AC9 /* GentlenessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GentlenessView.swift; sourceTree = "<group>"; };
-		AA591B412B747D1F002F5AC9 /* SelfControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfControlView.swift; sourceTree = "<group>"; };
 		AA591B452B796C3D002F5AC9 /* SavedVerses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedVerses.swift; sourceTree = "<group>"; };
 		AA591B4A2B796D71002F5AC9 /* SavedVersesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedVersesModel.swift; sourceTree = "<group>"; };
 		AA591B4C2B7C6EF9002F5AC9 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
-		AA591B4E2B7C714A002F5AC9 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
-		AA591B522B7C8703002F5AC9 /* JoyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoyView.swift; sourceTree = "<group>"; };
-		AA591B542B7C8A89002F5AC9 /* PeaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeaceView.swift; sourceTree = "<group>"; };
 		AA7D108F2BC78E1400DFF127 /* BibleVerse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BibleVerse.swift; sourceTree = "<group>"; };
+		AAB9F5EC2C1A9B1A0080F529 /* ReadApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadApp.swift; sourceTree = "<group>"; };
+		AAC8F66F2C050E450038EFFE /* VerseChapterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerseChapterModel.swift; sourceTree = "<group>"; };
+		AAD2AA0E2C0A78340092013B /* Read-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Read-Info.plist"; sourceTree = "<group>"; };
+		AAD3B1002D0E123400000001 /* VirtueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtueView.swift; sourceTree = "<group>"; };
+		AAD3B1022D0E123400000002 /* SpeechService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechService.swift; sourceTree = "<group>"; };
+		AAD3B1042D0E123400000003 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		AAD3B1062D0E123400000004 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		B2024E20654045C11A734024 /* VerseCard.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VerseCard.swift; path = VerseCard.swift; sourceTree = "<group>"; };
+		C756E3F63268B3D6773A1AB3 /* ReadingColumn.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ReadingColumn.swift; path = ReadingColumn.swift; sourceTree = "<group>"; };
+		D92D43EE875061E7070A09C3 /* BibleBrainClient.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BibleBrainClient.swift; path = BibleBrainClient.swift; sourceTree = "<group>"; };
+		DEE0B784A1BA6AAC82274DA6 /* VerseTextFormatter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VerseTextFormatter.swift; path = VerseTextFormatter.swift; sourceTree = "<group>"; };
+		F56DCA60550F1569B08E88F1 /* GlassStyle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GlassStyle.swift; path = GlassStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +84,7 @@
 		AA591B172B732920002F5AC9 = {
 			isa = PBXGroup;
 			children = (
+				AAD2AA0E2C0A78340092013B /* Read-Info.plist */,
 				AA591B222B732921002F5AC9 /* Scroll */,
 				AA591B212B732921002F5AC9 /* Products */,
 			);
@@ -79,24 +101,34 @@
 		AA591B222B732921002F5AC9 /* Scroll */ = {
 			isa = PBXGroup;
 			children = (
-				AA591B4E2B7C714A002F5AC9 /* SplashScreenView.swift */,
-				AA591B4C2B7C6EF9002F5AC9 /* NotificationView.swift */,
-				AA591B232B732921002F5AC9 /* ReadApp.swift */,
-				AA591B4A2B796D71002F5AC9 /* SavedVersesModel.swift */,
-				AA591B452B796C3D002F5AC9 /* SavedVerses.swift */,
+				AAB9F5EC2C1A9B1A0080F529 /* ReadApp.swift */,
 				AA591B252B732921002F5AC9 /* ContentView.swift */,
+				AAD3B1002D0E123400000001 /* VirtueView.swift */,
+				AA591B452B796C3D002F5AC9 /* SavedVerses.swift */,
+				AA241FAB2C00E9CC009344FB /* ChapterView.swift */,
+				AAD3B1042D0E123400000003 /* SettingsView.swift */,
+				AA591B4C2B7C6EF9002F5AC9 /* NotificationView.swift */,
 				AA7D108F2BC78E1400DFF127 /* BibleVerse.swift */,
-				AA591B312B73373B002F5AC9 /* LoveView.swift */,
-				AA591B522B7C8703002F5AC9 /* JoyView.swift */,
-				AA591B542B7C8A89002F5AC9 /* PeaceView.swift */,
-				AA591B372B747B96002F5AC9 /* PatienceView.swift */,
-				AA591B392B747C07002F5AC9 /* KindnessView.swift */,
-				AA591B3B2B747C45002F5AC9 /* GoodnessView.swift */,
-				AA591B3D2B747CAB002F5AC9 /* FaithfullView.swift */,
-				AA591B3F2B747CEE002F5AC9 /* GentlenessView.swift */,
-				AA591B412B747D1F002F5AC9 /* SelfControlView.swift */,
+				AA591B4A2B796D71002F5AC9 /* SavedVersesModel.swift */,
+				AAC8F66F2C050E450038EFFE /* VerseChapterModel.swift */,
+				AAD3B1022D0E123400000002 /* SpeechService.swift */,
+				AAD3B1062D0E123400000004 /* Theme.swift */,
 				AA591B272B732941002F5AC9 /* Assets.xcassets */,
 				AA591B292B732941002F5AC9 /* Preview Content */,
+				0FE3B139EDB4215C41DA6E2D /* BibleBooks.swift */,
+				DEE0B784A1BA6AAC82274DA6 /* VerseTextFormatter.swift */,
+				B2024E20654045C11A734024 /* VerseCard.swift */,
+				5193B2430ABFD53083F6ED4F /* SavedChapter.swift */,
+				913D2BF9DF5F32DD3DE9AB09 /* SavedChaptersModel.swift */,
+				0CBEC8CE8BE253E4F5EAFD7A /* SavedChapters.swift */,
+				F56DCA60550F1569B08E88F1 /* GlassStyle.swift */,
+				111E9F4A37CA62A2A0284CDA /* BollsClient.swift */,
+				9D8259034A7F25908BE43E25 /* VoicePicker.swift */,
+				030D1A17E94154D12209351D /* ToastOverlay.swift */,
+				63A7AF0E21C4D0F779DEF8A9 /* BibleBrainConfig.swift */,
+				D92D43EE875061E7070A09C3 /* BibleBrainClient.swift */,
+				9FECA32D2FAEC8E7E1A95DCE /* StreamingAudioService.swift */,
+				C756E3F63268B3D6773A1AB3 /* ReadingColumn.swift */,
 			);
 			path = Scroll;
 			sourceTree = "<group>";
@@ -179,22 +211,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA591B322B73373C002F5AC9 /* LoveView.swift in Sources */,
-				AA591B3A2B747C07002F5AC9 /* KindnessView.swift in Sources */,
-				AA591B532B7C8703002F5AC9 /* JoyView.swift in Sources */,
-				AA591B552B7C8A89002F5AC9 /* PeaceView.swift in Sources */,
-				AA591B4F2B7C714A002F5AC9 /* SplashScreenView.swift in Sources */,
-				AA591B422B747D1F002F5AC9 /* SelfControlView.swift in Sources */,
-				AA591B3E2B747CAB002F5AC9 /* FaithfullView.swift in Sources */,
+				AAB9F5ED2C1A9B1A0080F529 /* ReadApp.swift in Sources */,
 				AA591B262B732921002F5AC9 /* ContentView.swift in Sources */,
-				AA591B382B747B96002F5AC9 /* PatienceView.swift in Sources */,
-				AA591B3C2B747C45002F5AC9 /* GoodnessView.swift in Sources */,
+				AAD3B1012D0E123400000001 /* VirtueView.swift in Sources */,
 				AA591B462B796C3D002F5AC9 /* SavedVerses.swift in Sources */,
-				AA591B402B747CEE002F5AC9 /* GentlenessView.swift in Sources */,
+				AA241FAC2C00E9CC009344FB /* ChapterView.swift in Sources */,
+				AAD3B1052D0E123400000003 /* SettingsView.swift in Sources */,
 				AA591B4D2B7C6EF9002F5AC9 /* NotificationView.swift in Sources */,
-				AA591B4B2B796D71002F5AC9 /* SavedVersesModel.swift in Sources */,
 				AA7D10902BC78E1400DFF127 /* BibleVerse.swift in Sources */,
-				AA591B242B732921002F5AC9 /* ReadApp.swift in Sources */,
+				AA591B4B2B796D71002F5AC9 /* SavedVersesModel.swift in Sources */,
+				AAC8F6702C050E450038EFFE /* VerseChapterModel.swift in Sources */,
+				AAD3B1032D0E123400000002 /* SpeechService.swift in Sources */,
+				AAD3B1072D0E123400000004 /* Theme.swift in Sources */,
+				BDFAC6183A483D5053369BB2 /* BibleBooks.swift in Sources */,
+				C8E2AA6D563BA65280FE66C0 /* VerseTextFormatter.swift in Sources */,
+				11A2C06D74001DFBB80A8A27 /* VerseCard.swift in Sources */,
+				34293C5BF024593527E53F76 /* SavedChapter.swift in Sources */,
+				B3A8905B9F27B1CD988902CC /* SavedChaptersModel.swift in Sources */,
+				C6585882C8712797C239FC60 /* SavedChapters.swift in Sources */,
+				9E5621D82DE2465232BF4724 /* GlassStyle.swift in Sources */,
+				32A216411352A4E627ADFBC1 /* BollsClient.swift in Sources */,
+				C7D04719C3D4DDCC3C80B4B3 /* VoicePicker.swift in Sources */,
+				58CE1BAEDCCBCEE7540EBB33 /* ToastOverlay.swift in Sources */,
+				BC216D72D65B7CD889C3C467 /* BibleBrainConfig.swift in Sources */,
+				A06D1EC2F04B11A0E804D068 /* BibleBrainClient.swift in Sources */,
+				4900B2A027C199682345A166 /* StreamingAudioService.swift in Sources */,
+				1A29944619936B2F9BB379AF /* ReadingColumn.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,7 +295,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -310,7 +352,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -326,11 +368,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_ASSET_PATHS = "\"Scroll/Preview Content\"";
 				DEVELOPMENT_TEAM = TUG3BHLSM4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Read-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Scroll;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -340,7 +384,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 2.2;
 				PRODUCT_BUNDLE_IDENTIFIER = okekedev.Read;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -355,11 +399,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_ASSET_PATHS = "\"Scroll/Preview Content\"";
 				DEVELOPMENT_TEAM = TUG3BHLSM4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Read-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Scroll;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -369,7 +415,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 2.2;
 				PRODUCT_BUNDLE_IDENTIFIER = okekedev.Read;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
