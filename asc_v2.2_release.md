@@ -1,7 +1,9 @@
 # Scroll v2.2 — Release Sheet
 
-Status: built and tested in the simulator. **Not archived, not uploaded, not submitted.**
-Submit after scroll.okeke.us is live on its own domain (shared verses link there).
+Status (2026-11-17): build 7 is archived, uploaded and processed (VALID) in App Store Connect.
+scroll.okeke.us is live. The owner approved submitting 2.2 with the name "Scroll: Fruit of the Spirit".
+Version 2.2 could not be created yet because App Store Connect had an API outage; the push scripts are
+`~/dev/Apple Developer/upload/asc_push_scroll_v2_2*.py` and `asc_scroll_v2_2_when_healthy.sh`.
 
 ## Version
 
@@ -129,8 +131,8 @@ No account, no purchases, no tracking. Bible text is loaded from the public boll
 - [x] MARKETING_VERSION 2.2, CURRENT_PROJECT_VERSION 7
 - [x] Builds clean; tested in the simulator (NIV data migration, share text, chapter scroll)
 - [x] New screenshots captured
-- [ ] scroll.okeke.us live on the custom domain (needs the DNS record)
+- [x] scroll.okeke.us live on the custom domain
 - [ ] Share sheet and long-press menu checked on a real iPhone
-- [ ] Archive, export, upload build 7
+- [x] Archive, export, upload build 7
 - [ ] Push metadata and screenshots
 - [ ] Submit for review

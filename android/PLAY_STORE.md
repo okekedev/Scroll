@@ -4,6 +4,22 @@ Package `com.christianokeke.scroll`. Play account: the one that owns Okeke Contr
 Build and signing steps are in `README.md`; the general Play playbook is the
 `google-play-release` skill. This file is the listing content and the console checklist.
 
+## Status (2026-11-17)
+
+- App created in Play Console: app id `4974328180689427660`, name "Scroll: Bible Verses".
+- Version 1 (1.0) is live on the **internal testing** track for the "Okeke testers" list
+  (track id `4701599575012845726`).
+- Store listing, all App content declarations (content rating: Everyone), category Books &
+  Reference, contact details, all countries and production release 1 (1.0) were **sent for
+  review on 2026-11-17**. Managed publishing is off, so it goes public when Google approves.
+- The feature graphic is labelled as created or edited using AI (owner's choice).
+- The upload key in `keystore/` is now enrolled with Play App Signing. Do not replace it.
+
+What worked for automation: Play's uploaders accept files set directly on their hidden file
+inputs (icon, feature graphic, screenshots and the 3.5 MB app bundle all went in that way).
+Deep links to `main-store-listing` bounce to the account home; use `store-listings/default/edit`,
+`store-settings`, `app-content/overview`, `tracks/internal-testing`, `tracks/production`, `publishing`.
+
 ## Store listing (Grow users → Store listing)
 
 **App name** (30 max)
