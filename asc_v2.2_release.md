@@ -1,9 +1,12 @@
 # Scroll v2.2 — Release Sheet
 
-Status (2026-11-17): build 7 is archived, uploaded and processed (VALID) in App Store Connect.
-scroll.okeke.us is live. The owner approved submitting 2.2 with the name "Scroll: Fruit of the Spirit".
-Version 2.2 could not be created yet because App Store Connect had an API outage; the push scripts are
-`~/dev/Apple Developer/upload/asc_push_scroll_v2_2*.py` and `asc_scroll_v2_2_when_healthy.sh`.
+Status: **submitted to App Review on 2026-11-17** (state `WAITING_FOR_REVIEW`, releases automatically
+when approved). Build 7, name "Scroll: Fruit of the Spirit", subtitle "Bible verses by topic to share",
+new description, keywords, what's new and the 6.9" iPhone and 13" iPad screenshots all went in with it.
+Push scripts live in `~/dev/Apple Developer/upload/asc_push_scroll_v2_2*.py`.
+
+Left as they were: the older 6.5", 5.5" and 12.9" (2nd gen) screenshot sets still hold 2024/2025 screenshots
+of the old design.
 
 ## Version
 
@@ -134,5 +137,5 @@ No account, no purchases, no tracking. Bible text is loaded from the public boll
 - [x] scroll.okeke.us live on the custom domain
 - [ ] Share sheet and long-press menu checked on a real iPhone
 - [x] Archive, export, upload build 7
-- [ ] Push metadata and screenshots
-- [ ] Submit for review
+- [x] Push metadata and screenshots
+- [x] Submit for review
