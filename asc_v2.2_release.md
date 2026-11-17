@@ -6,7 +6,10 @@ new description, keywords, what's new and the 6.9" iPhone and 13" iPad screensho
 Push scripts live in `~/dev/Apple Developer/upload/asc_push_scroll_v2_2*.py`.
 
 Left as they were: the older 6.5", 5.5" and 12.9" (2nd gen) screenshot sets still hold 2024/2025 screenshots
-of the old design.
+of the old design. Replacements are ready in `scroll_v2.2_screenshots/iphone_65/` (1284×2778),
+`iphone_55/` (1242×2208) and `ipad_129/` (2048×2732), made from the 6.9" and 13" captures. They were
+**not uploaded**: the owner chose to wait until 2.2 is through review rather than edit a version in the queue.
+Push them with the next version (display types `APP_IPHONE_65`, `APP_IPHONE_55`, `APP_IPAD_PRO_129`).
 
 ## Version
 
