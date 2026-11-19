@@ -227,7 +227,7 @@ export function buildFiles() {
 
   files.set('sitemap.xml', sitemap());
   files.set('robots.txt', `User-agent: *\nAllow: /\n\nSitemap: ${SITE_ORIGIN}/sitemap.xml\n`);
-  files.set(`${INDEXNOW_KEY}.txt`, `${INDEXNOW_KEY}\n`);
+  files.set(`${INDEXNOW_KEY}.txt`, INDEXNOW_KEY); // the key and nothing else, not even a newline
 
   return files;
 }
