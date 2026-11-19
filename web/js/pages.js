@@ -102,7 +102,7 @@ export function aboutContent(h) {
       'It began as an iPhone app built around the Fruits of the Spirit in Galatians 5: love, joy, peace, patience, kindness, goodness, faithfulness, gentleness and self-control. The home page still starts there. Scroll is free ',
       h('a', { href: APP_STORE_URL, rel: 'noopener', text: 'on the App Store' }), ' and ',
       h('a', { href: PLAY_STORE_URL, rel: 'noopener', text: 'on Google Play' }), '.'),
-    h('p', { text: 'There is no account and no ads. Anything you save stays on your device.' }),
+    h('p', { text: 'There is no account, no ads and no tracking. Anything you save stays on your device.' }),
     h('h2', { text: 'Translations' }),
     ...TRANSLATIONS.map((t) => h('p', { class: 'prose-small' }, h('strong', { text: `${t.name} (${t.code}). ` }), COPYRIGHT[t.code])),
     h('p', { class: 'prose-small' }, 'Bible text is loaded from ', h('a', { href: 'https://bolls.life', rel: 'noopener', text: 'bolls.life' }), '.'),
@@ -113,10 +113,8 @@ export function aboutContent(h) {
 export function privacyContent(h) {
   return prose(h, 'Privacy',
     h('p', { text: 'This covers the Scroll website and the Scroll apps for iPhone, iPad and Android. Scroll is made by Okeke LLC.' }),
-    h('h2', { text: 'What the apps collect' }),
-    h('p', { text: 'Nothing. The Scroll apps for iPhone, iPad and Android have no accounts, no ads, no analytics and no tracking. They do not ask for your name, email, contacts or location.' }),
-    h('h2', { text: 'What the website collects' }),
-    h('p', { text: 'The website, scroll.okeke.us, uses Google Analytics to count visits and see which pages are read. Google sets a cookie and receives technical details such as your browser, device type and rough location. It does not tell us who you are, and we do not use it for advertising. The website has no accounts and no ads.' }),
+    h('h2', { text: 'What Scroll collects' }),
+    h('p', { text: 'Nothing. There are no accounts, no ads, no analytics and no tracking. Scroll does not ask for your name, email, contacts or location.' }),
     h('h2', { text: 'What stays on your device' }),
     h('p', { text: 'Verses and chapters you save, the translation you last used, and your text size and theme are stored only on your device (in the app, or in this browser for the website). They are never sent to us. Deleting the app or clearing this site’s data in your browser removes them.' }),
     h('h2', { text: 'Where Bible text comes from' }),
@@ -127,8 +125,8 @@ export function privacyContent(h) {
     h('h2', { text: 'Sharing' }),
     h('p', { text: 'When you share or copy a verse, Scroll hands the text and a link to the app you choose. Nothing is shared unless you do it.' }),
     h('h2', { text: 'Children' }),
-    h('p', { text: 'Scroll is suitable for all ages. The apps collect no personal information from anyone.' }),
+    h('p', { text: 'Scroll is suitable for all ages and collects no personal information from anyone.' }),
     h('h2', { text: 'Contact' }),
     h('p', null, 'Questions about privacy? Email ', h('a', { href: `mailto:${CONTACT_EMAIL}`, text: CONTACT_EMAIL }), '.'),
-    h('p', { class: 'prose-small', text: 'Last updated November 19, 2026.' }));
+    h('p', { class: 'prose-small', text: 'Last updated November 16, 2026.' }));
 }

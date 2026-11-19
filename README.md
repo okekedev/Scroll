@@ -48,7 +48,7 @@ Search engines: Google reads the site through the `okeke.us` domain property in 
 Bing is verified by the `msvalidate.01` tag in every page, and each deploy pings IndexNow with
 the addresses in the sitemap. Chapters are not in the sitemap; they are found by links. A verse
 address such as `/ESV/43/3/16` is canonical to its chapter. Search and Saved are `noindex`.
-The site counts visits with Google Analytics (`web/js/analytics.js`, property "Scroll"); the apps collect nothing, and the privacy page says both.
+The site has no analytics, and that is on purpose.
 
 ## iPhone and iPad
 

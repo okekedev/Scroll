@@ -49,14 +49,14 @@ export function pageMeta(route) {
     case 'about':
       return {
         title: `About | ${SITE_NAME}`,
-        description: 'Scroll is a quiet place to read the Bible, built around the Fruits of the Spirit in Galatians 5. Free, with no account and no ads.',
+        description: 'Scroll is a quiet place to read the Bible, built around the Fruits of the Spirit in Galatians 5. Free, with no account, no ads and no tracking.',
         path: '/about',
         index: true,
       };
     case 'privacy':
       return {
         title: `Privacy | ${SITE_NAME}`,
-        description: 'Privacy policy for the Scroll website and the Scroll apps for iPhone, iPad and Android. The apps collect nothing.',
+        description: 'Privacy policy for the Scroll website and the Scroll apps for iPhone, iPad and Android. Scroll collects nothing.',
         path: '/privacy',
         index: true,
       };
