@@ -120,6 +120,7 @@ function page({ route, main = '', structured = null, needsScript = true, generic
     '<link rel="stylesheet" href="/styles.css">',
     structured ? jsonLd(structured) : null,
     '<script src="/js/boot.js"></script>',
+    '<script src="/js/analytics.js" defer></script>',
     '<script type="module" src="/js/app.js"></script>',
   ].filter((line) => line !== null);
 
@@ -234,7 +235,8 @@ function llms() {
     '- Translations: English Standard Version (ESV, the default), King James Version (KJV), New American Standard Bible (NASB) and New Living Translation (NLT).',
     `- Addresses: a chapter is ${SITE_ORIGIN}/ESV/43/3/ (translation, book number from 1 for Genesis to 66 for Revelation, then chapter; book 43 is John). A verse is ${SITE_ORIGIN}/ESV/43/3/16 and a run of verses is ${SITE_ORIGIN}/ESV/43/3/16-18.`,
     '- Sharing: a shared verse is the verse text, its reference and translation, and a link to that verse.',
-    '- Price: free. No account, no ads and no tracking. Saved verses and chapters stay on your device.',
+    '- Price: free. No account and no ads. Saved verses and chapters stay on your device.',
+    '- Privacy: the apps collect nothing. The website counts visits with Google Analytics.',
     '- Bible text is loaded from bolls.life, a public Bible service.',
     `- Support: ${CONTACT_EMAIL}`,
     '- Made by Okeke LLC, Wichita Falls, Texas, https://okeke.us/',
