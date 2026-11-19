@@ -10,7 +10,8 @@ export const PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=com
 export const CONTACT_EMAIL = 'christian@okeke.us';
 
 export function brandLink(h) {
-  return h('a', { class: 'brand', href: '/' },
+  // The word "Scroll" is hidden on narrow screens, so the link names itself.
+  return h('a', { class: 'brand', href: '/', 'aria-label': 'Scroll home' },
     h('img', { src: '/img/logo.jpg', alt: '', width: '30', height: '30' }),
     h('span', { text: 'Scroll' }));
 }
