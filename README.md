@@ -28,11 +28,27 @@ These behave the same on every platform. Change them everywhere or nowhere.
 
 ```
 node scripts/serve-web.mjs          # preview at http://localhost:4173
-node --test tests/web/format.test.mjs
+node --test tests/web/*.test.mjs
+node scripts/build-pages.mjs        # rewrite the static pages (see below)
 ```
 
 Pushing changes under `web/` to `main` runs the tests and deploys to Azure Static Web Apps
 (`swa-scroll`) through `.github/workflows/deploy-web.yml`.
+
+**Static pages for search engines.** The site is a single-page app, but the home page, the nine
+Fruit of the Spirit pages, About and Privacy are also real HTML files with their own title,
+description, canonical address and finished content, so search engines and link previews can
+read them without JavaScript. `scripts/build-pages.mjs` writes them, along with `sitemap.xml`,
+`robots.txt`, the fallback page (`shell.html`, served for chapters and every other address) and
+the IndexNow key file. The words come from `web/js/pages.js` and the titles from
+`web/js/meta.js`, the same code the app runs in the browser. After changing either file, run
+the script and commit what it writes; the tests fail if the pages on disk are out of date.
+
+Search engines: Google reads the site through the `okeke.us` domain property in Search Console.
+Bing is verified by the `msvalidate.01` tag in every page, and each deploy pings IndexNow with
+the addresses in the sitemap. Chapters are not in the sitemap; they are found by links. A verse
+address such as `/ESV/43/3/16` is canonical to its chapter. Search and Saved are `noindex`.
+The site has no analytics, and that is on purpose.
 
 ## iPhone and iPad
 

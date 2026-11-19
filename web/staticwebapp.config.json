@@ -1,7 +1,7 @@
 {
   "navigationFallback": {
-    "rewrite": "/index.html",
-    "exclude": ["/js/*", "/fonts/*", "/img/*", "/.well-known/*", "/*.css", "/*.txt", "/*.webmanifest"]
+    "rewrite": "/shell.html",
+    "exclude": ["/js/*", "/fonts/*", "/img/*", "/.well-known/*", "/*.css", "/*.txt", "/*.xml", "/*.webmanifest"]
   },
   "routes": [
     { "route": "/fonts/*", "headers": { "Cache-Control": "public, max-age=31536000, immutable" } },

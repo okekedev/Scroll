@@ -1,56 +1,43 @@
 <!doctype html>
+<!-- Written by scripts/build-pages.mjs. Edit web/js/pages.js or web/js/meta.js, then run it again. -->
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Privacy | Scroll</title>
   <meta name="description" content="Privacy policy for the Scroll website and the Scroll apps for iPhone, iPad and Android. Scroll collects nothing.">
+  <link rel="canonical" href="https://scroll.okeke.us/privacy">
   <meta name="theme-color" content="#F5F8F7" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#0F1A1D" media="(prefers-color-scheme: dark)">
+  <meta name="apple-itunes-app" content="app-id=6497410297">
+  <meta name="msvalidate.01" content="98C3F99FD624BD0518FA653152FE9904">
+
+  <meta property="og:site_name" content="Scroll">
+  <meta property="og:title" content="Privacy | Scroll">
+  <meta property="og:description" content="Privacy policy for the Scroll website and the Scroll apps for iPhone, iPad and Android. Scroll collects nothing.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://scroll.okeke.us/privacy">
+  <meta property="og:image" content="https://scroll.okeke.us/img/og.jpg">
+  <meta name="twitter:card" content="summary">
+
   <link rel="icon" type="image/png" href="/img/favicon.png">
   <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.webmanifest">
   <link rel="preload" href="/fonts/gentium-book-plus-400.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/styles.css">
   <script src="/js/boot.js"></script>
+  <script type="module" src="/js/app.js"></script>
 </head>
 <body>
-  <!-- A plain HTML page (no JavaScript needed) so app stores and their reviewers can read it.
-       Keep the wording in step with renderPrivacy() in js/app.js. -->
-  <header class="bar">
-    <a class="brand" href="/"><img src="/img/logo.jpg" alt="" width="30" height="30"><span>Scroll</span></a>
-  </header>
-  <main class="view">
-    <article class="prose">
-      <h1 class="page-title">Privacy</h1>
-      <p>This covers the Scroll website and the Scroll apps for iPhone, iPad and Android. Scroll is made by Okeke LLC.</p>
-
-      <h2>What Scroll collects</h2>
-      <p>Nothing. There are no accounts, no ads, no analytics and no tracking. Scroll does not ask for your name, email, contacts or location.</p>
-
-      <h2>What stays on your device</h2>
-      <p>Verses and chapters you save, the translation you last used, and your text size and theme are stored only on your device (in the app, or in this browser for the website). They are never sent to us. Deleting the app or clearing this site’s data in your browser removes them.</p>
-
-      <h2>Where Bible text comes from</h2>
-      <p>When you open a chapter or search, Scroll requests the text from <a href="https://bolls.life" rel="noopener">bolls.life</a>, a public Bible service. Like any website, that service and our web host (Microsoft Azure) can see technical details of the request, such as your IP address and which chapter was requested. Scroll adds no identifiers to these requests.</p>
-
-      <h2>Sharing</h2>
-      <p>When you share or copy a verse, Scroll hands the text and a link to the app you choose. Nothing is shared unless you do it.</p>
-
-      <h2>Children</h2>
-      <p>Scroll is suitable for all ages and collects no personal information from anyone.</p>
-
-      <h2>Contact</h2>
-      <p>Questions about privacy? Email <a href="mailto:christian@okeke.us">christian@okeke.us</a>.</p>
-      <p class="prose-small">Last updated November 16, 2026.</p>
-    </article>
+  <a class="skip-link" href="#main">Skip to the text</a>
+  <header class="bar" id="bar"><a class="brand" href="/"><img src="/img/logo.jpg" alt="" width="30" height="30"><span>Scroll</span></a></header>
+  <main id="main" tabindex="-1" class="view view-privacy">
+    <article class="prose"><h1 class="page-title">Privacy</h1><p>This covers the Scroll website and the Scroll apps for iPhone, iPad and Android. Scroll is made by Okeke LLC.</p><h2>What Scroll collects</h2><p>Nothing. There are no accounts, no ads, no analytics and no tracking. Scroll does not ask for your name, email, contacts or location.</p><h2>What stays on your device</h2><p>Verses and chapters you save, the translation you last used, and your text size and theme are stored only on your device (in the app, or in this browser for the website). They are never sent to us. Deleting the app or clearing this site’s data in your browser removes them.</p><h2>Where Bible text comes from</h2><p>When you open a chapter or search, Scroll requests the text from <a href="https://bolls.life" rel="noopener">bolls.life</a>, a public Bible service. Like any website, that service and our web host (Microsoft Azure) can see technical details of the request, such as your IP address and which chapter was requested. Scroll adds no identifiers to these requests.</p><h2>Sharing</h2><p>When you share or copy a verse, Scroll hands the text and a link to the app you choose. Nothing is shared unless you do it.</p><h2>Children</h2><p>Scroll is suitable for all ages and collects no personal information from anyone.</p><h2>Contact</h2><p>Questions about privacy? Email <a href="mailto:christian@okeke.us">christian@okeke.us</a>.</p><p class="prose-small">Last updated November 16, 2026.</p></article>
   </main>
-  <footer class="foot">
-    <nav class="foot-links" aria-label="Site">
-      <a href="/about">About</a>
-      <a href="/privacy">Privacy</a>
-      <a href="https://apps.apple.com/app/id6497410297" rel="noopener">iPhone app</a>
-    </nav>
+  <footer class="foot" id="foot">
+    <nav class="foot-links" aria-label="Site"><a href="/about">About</a><a href="/privacy">Privacy</a><a href="https://apps.apple.com/app/id6497410297" rel="noopener">iPhone app</a><a href="https://play.google.com/store/apps/details?id=com.christianokeke.scroll" rel="noopener">Android app</a></nav>
     <p class="foot-note">© 2026 Okeke LLC</p>
   </footer>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
 </body>
 </html>

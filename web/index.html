@@ -1,18 +1,22 @@
 <!doctype html>
+<!-- Written by scripts/build-pages.mjs. Edit web/js/pages.js or web/js/meta.js, then run it again. -->
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Scroll</title>
+  <title>Scroll: Bible Verses on the Fruit of the Spirit</title>
   <meta name="description" content="Read the Bible a chapter at a time, find verses on the Fruits of the Spirit, and share the ones that stay with you. Free, no account.">
+  <link rel="canonical" href="https://scroll.okeke.us/">
   <meta name="theme-color" content="#F5F8F7" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#0F1A1D" media="(prefers-color-scheme: dark)">
   <meta name="apple-itunes-app" content="app-id=6497410297">
+  <meta name="msvalidate.01" content="98C3F99FD624BD0518FA653152FE9904">
 
   <meta property="og:site_name" content="Scroll">
-  <meta property="og:title" content="Scroll">
-  <meta property="og:description" content="Read the Bible a chapter at a time, find verses on the Fruits of the Spirit, and share the ones that stay with you.">
+  <meta property="og:title" content="Scroll: Bible Verses on the Fruit of the Spirit">
+  <meta property="og:description" content="Read the Bible a chapter at a time, find verses on the Fruits of the Spirit, and share the ones that stay with you. Free, no account.">
   <meta property="og:type" content="website">
+  <meta property="og:url" content="https://scroll.okeke.us/">
   <meta property="og:image" content="https://scroll.okeke.us/img/og.jpg">
   <meta name="twitter:card" content="summary">
 
@@ -21,14 +25,22 @@
   <link rel="manifest" href="/manifest.webmanifest">
   <link rel="preload" href="/fonts/gentium-book-plus-400.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/styles.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://scroll.okeke.us/#website","url":"https://scroll.okeke.us/","name":"Scroll","description":"Read the Bible a chapter at a time, find verses on the Fruits of the Spirit, and share the ones that stay with you. Free, no account.","inLanguage":"en","publisher":{"@id":"https://scroll.okeke.us/#publisher"}},{"@type":"Organization","@id":"https://scroll.okeke.us/#publisher","name":"Okeke LLC","url":"https://okeke.us/"}]}</script>
   <script src="/js/boot.js"></script>
   <script type="module" src="/js/app.js"></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to the text</a>
-  <header class="bar" id="bar"></header>
-  <main id="main" tabindex="-1"></main>
-  <footer class="foot" id="foot"></footer>
+  <header class="bar" id="bar"><a class="brand" href="/"><img src="/img/logo.jpg" alt="" width="30" height="30"><span>Scroll</span></a></header>
+  <main id="main" tabindex="-1" class="view view-home">
+    <section class="hero"><h1 class="sr-only">Scroll: read the Bible and find verses on the Fruits of the Spirit</h1><blockquote class="hero-verse"><p>But the fruit of the Spirit is <a class="fruit-link" href="/fruit/love">love</a>, <a class="fruit-link" href="/fruit/joy">joy</a>, <a class="fruit-link" href="/fruit/peace">peace</a>, <a class="fruit-link" href="/fruit/patience">patience</a>, <a class="fruit-link" href="/fruit/kindness">kindness</a>, <a class="fruit-link" href="/fruit/goodness">goodness</a>, <a class="fruit-link" href="/fruit/faith">faithfulness</a>, <a class="fruit-link" href="/fruit/gentleness">gentleness</a>, <a class="fruit-link" href="/fruit/self-control">self-control</a>; against such things there is no law.</p><footer><a class="hero-ref" href="/ESV/48/5/22-23">Galatians 5:22-23</a></footer></blockquote><p class="hero-hint">Choose a word above to read verses about it.</p></section>
+    <section class="home-read" aria-label="Read the Bible"><div class="home-actions"><a class="btn btn-primary" href="/ESV/1/1/">Start at Genesis 1</a><button type="button" class="btn">Choose a book</button></div><form class="home-search" role="search" action="/search" method="get"><input class="field" type="search" name="q" placeholder="A word or phrase" aria-label="Search the Bible" autocomplete="off"><button type="submit" class="btn">Search the Bible</button></form></section>
+    <section class="home-app"><img src="/img/logo.jpg" alt="" width="56" height="56"><p>Scroll is also an app for iPhone, iPad and Android. Free, with no account and no ads. Get Scroll <a href="https://apps.apple.com/app/id6497410297" rel="noopener">on the App Store</a> or <a href="https://play.google.com/store/apps/details?id=com.christianokeke.scroll" rel="noopener">on Google Play</a>.</p></section>
+  </main>
+  <footer class="foot" id="foot">
+    <nav class="foot-links" aria-label="Site"><a href="/about">About</a><a href="/privacy">Privacy</a><a href="https://apps.apple.com/app/id6497410297" rel="noopener">iPhone app</a><a href="https://play.google.com/store/apps/details?id=com.christianokeke.scroll" rel="noopener">Android app</a></nav>
+    <p class="foot-note">© 2026 Okeke LLC</p>
+  </footer>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
   <noscript>
     <p class="noscript">Scroll needs JavaScript turned on to load Bible text.</p>

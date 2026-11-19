@@ -4,13 +4,14 @@ import {
   nextChapter, previousChapter,
 } from './bible.js';
 import {
-  reference, chapterPath, versePath, parseVerseSpec, shareParts,
+  reference, chapterPath, versePath, parseVerseSpec, shareParts, SITE_ORIGIN,
 } from './format.js';
 import { fetchChapter, prefetchChapter, findAllVerses, searchVerses } from './api.js';
 import { store } from './store.js';
-
-const APP_STORE_URL = 'https://apps.apple.com/app/id6497410297';
-const CONTACT_EMAIL = 'christian@okeke.us';
+import { pageMeta } from './meta.js';
+import {
+  brandLink, footerContent, homeContent, fruitContent, fruitIntro, aboutContent, privacyContent,
+} from './pages.js';
 
 const $bar = document.getElementById('bar');
 const $main = document.getElementById('main');
@@ -170,8 +171,29 @@ function onLeave(fn) {
   viewCleanups.push(fn);
 }
 
-function setTitle(title) {
-  document.title = title ? `${title} | Scroll` : 'Scroll';
+function headTag(selector, create) {
+  let tag = document.head.querySelector(selector);
+  if (!tag && create) {
+    tag = create();
+    document.head.append(tag);
+  }
+  return tag;
+}
+
+/** Title, description, canonical address and robots tag for the page now showing (see meta.js). */
+function applyMeta(route) {
+  const meta = pageMeta(route);
+  document.title = meta.title;
+  headTag('meta[name="description"]', () => h('meta', { name: 'description' })).setAttribute('content', meta.description);
+
+  if (meta.path) {
+    headTag('link[rel="canonical"]', () => h('link', { rel: 'canonical' })).setAttribute('href', SITE_ORIGIN + meta.path);
+  } else {
+    headTag('link[rel="canonical"]')?.remove();
+  }
+
+  if (meta.index) headTag('meta[name="robots"]')?.remove();
+  else headTag('meta[name="robots"]', () => h('meta', { name: 'robots' })).setAttribute('content', 'noindex');
 }
 
 function render() {
@@ -193,6 +215,7 @@ function render() {
     if (location.pathname !== canonical) history.replaceState(null, '', canonical);
   }
 
+  applyMeta(route);
   $main.replaceChildren();
   $main.className = `view view-${route.name}`;
   window.scrollTo(0, 0);
@@ -249,9 +272,7 @@ function buildBar() {
     buildMenuPanel());
 
   $bar.replaceChildren(
-    h('a', { class: 'brand', href: '/' },
-      h('img', { src: '/img/logo.jpg', alt: '', width: '30', height: '30' }),
-      h('span', { text: 'Scroll' })),
+    brandLink(h),
     $location,
     $translation,
     h('span', { class: 'bar-gap' }),
@@ -505,54 +526,23 @@ function pagedList(items, renderItem, pageSize = 30) {
 /* ---------- home ---------- */
 
 function renderHome() {
-  setTitle('');
   const translation = store.translation();
   const last = store.lastRead();
-
-  // Galatians 5:22-23 (ESV). Each fruit in the verse opens its verses.
-  const fruitLink = (slug) => {
-    const fruit = FRUITS.find((item) => item.slug === slug);
-    return h('a', { class: 'fruit-link', href: `/fruit/${fruit.slug}`, text: fruit.word });
-  };
-  const verse = h('blockquote', { class: 'hero-verse' },
-    h('p', null,
-      'But the fruit of the Spirit is ', fruitLink('love'), ', ', fruitLink('joy'), ', ', fruitLink('peace'), ', ',
-      fruitLink('patience'), ', ', fruitLink('kindness'), ', ', fruitLink('goodness'), ', ', fruitLink('faith'), ', ',
-      fruitLink('gentleness'), ', ', fruitLink('self-control'), '; against such things there is no law.'),
-    h('footer', null,
-      h('a', { class: 'hero-ref', href: '/ESV/48/5/22-23', text: 'Galatians 5:22-23' })));
-
   const start = last
-    ? h('a', { class: 'btn btn-primary', href: chapterPath(translation, last.book, last.chapter), text: `Continue reading ${reference(last.book, last.chapter)}` })
-    : h('a', { class: 'btn btn-primary', href: chapterPath(translation, 1, 1), text: 'Start at Genesis 1' });
+    ? { href: chapterPath(translation, last.book, last.chapter), text: `Continue reading ${reference(last.book, last.chapter)}` }
+    : { href: chapterPath(translation, 1, 1), text: 'Start at Genesis 1' };
 
-  const searchInput = h('input', { class: 'field', type: 'search', name: 'q', placeholder: 'A word or phrase', 'aria-label': 'Search the Bible', autocomplete: 'off' });
-  const search = h('form', {
-    class: 'home-search',
-    role: 'search',
-    onSubmit: (event) => {
+  $main.append(...homeContent(h, {
+    start,
+    onPick: () => openPicker(),
+    onSearch: (event) => {
       event.preventDefault();
-      const query = searchInput.value.trim();
+      const input = event.currentTarget.elements.q;
+      const query = input.value.trim();
       if (query) navigate(`/search?q=${encodeURIComponent(query)}`);
-      else searchInput.focus();
+      else input.focus();
     },
-  }, searchInput, h('button', { type: 'submit', class: 'btn', text: 'Search the Bible' }));
-
-  $main.append(
-    h('section', { class: 'hero' },
-      h('h1', { class: 'sr-only', text: 'Scroll: read the Bible and find verses on the Fruits of the Spirit' }),
-      verse,
-      h('p', { class: 'hero-hint', text: 'Choose a word above to read verses about it.' })),
-    h('section', { class: 'home-read', 'aria-label': 'Read the Bible' },
-      h('div', { class: 'home-actions' },
-        start,
-        h('button', { type: 'button', class: 'btn', onClick: () => openPicker(), text: 'Choose a book' })),
-      search),
-    h('section', { class: 'home-app' },
-      h('img', { src: '/img/logo.jpg', alt: '', width: '56', height: '56' }),
-      h('p', null,
-        'Scroll is also an iPhone and iPad app. Free, with no account and no ads. ',
-        h('a', { href: APP_STORE_URL, rel: 'noopener', text: 'Get Scroll on the App Store' }), '.')));
+  }));
 }
 
 /* ---------- reader ---------- */
@@ -560,7 +550,6 @@ function renderHome() {
 function renderReader(route) {
   const { translation, book, chapter } = route;
   const title = reference(book, chapter);
-  setTitle(`${title} ${translation}`);
   store.setLastRead(book, chapter);
 
   const previous = previousChapter(book, chapter);
@@ -717,7 +706,6 @@ function renderReader(route) {
 
 function renderFruit({ fruit }) {
   const translation = store.translation();
-  setTitle(`Verses about ${fruit.term}`);
 
   const results = h('div', { class: 'results' });
   const count = h('p', { class: 'page-lede' });
@@ -733,19 +721,11 @@ function renderFruit({ fruit }) {
     onClick: () => { found = shuffled(found); show(); },
   }, icon('shuffle'), h('span', { text: 'Shuffle' }));
 
-  $main.append(
-    h('header', { class: 'page-head' },
-      h('h1', { class: 'page-title', text: fruit.name }),
-      count,
-      h('div', { class: 'page-tools' },
-        shuffleButton,
-        h('nav', { class: 'fruit-nav', 'aria-label': 'Fruits of the Spirit' },
-          FRUITS.filter((item) => item.slug !== fruit.slug).map((item) => h('a', { href: `/fruit/${item.slug}`, text: item.name }))))),
-    results);
+  $main.append(...fruitContent(h, fruit, { lede: count, shuffleButton, results }));
 
   const signal = viewAbort.signal;
   const load = async () => {
-    count.textContent = '';
+    count.textContent = fruitIntro(fruit);
     results.replaceChildren(loadingNote(`Finding verses about ${fruit.term}`));
     try {
       found = shuffled(await findAllVerses(translation, fruit.term, signal));
@@ -770,7 +750,6 @@ function renderFruit({ fruit }) {
 
 function renderSearch({ query }) {
   const translation = store.translation();
-  setTitle(query ? `“${query}”` : 'Search');
 
   const input = h('input', { class: 'field', type: 'search', name: 'q', value: query, placeholder: 'A word or phrase', 'aria-label': 'Search the Bible', autocomplete: 'off' });
   const form = h('form', {
@@ -842,7 +821,6 @@ function renderSearch({ query }) {
 /* ---------- saved ---------- */
 
 function renderSaved() {
-  setTitle('Saved');
   const body = h('div', { class: 'saved-body' });
   $main.append(h('header', { class: 'page-head' }, h('h1', { class: 'page-title', text: 'Saved' })), body);
 
@@ -891,44 +869,14 @@ function prose(title, ...blocks) {
 }
 
 function renderAbout() {
-  setTitle('About');
-  prose('About Scroll',
-    h('p', { text: 'Scroll is a quiet place to read the Bible. Open any chapter, pick the translation you like, save what you want to come back to, and share a verse with a link that opens right on it.' }),
-    h('p', null,
-      'It began as an iPhone app built around the Fruits of the Spirit in Galatians 5: love, joy, peace, patience, kindness, goodness, faithfulness, gentleness and self-control. The home page still starts there. ',
-      h('a', { href: APP_STORE_URL, rel: 'noopener', text: 'Scroll is free on the App Store' }), '.'),
-    h('p', { text: 'There is no account, no ads and no tracking. Anything you save stays on your device.' }),
-    h('h2', { text: 'Translations' }),
-    ...TRANSLATIONS.map((t) => h('p', { class: 'prose-small' }, h('strong', { text: `${t.name} (${t.code}). ` }), COPYRIGHT[t.code])),
-    h('p', { class: 'prose-small' }, 'Bible text is loaded from ', h('a', { href: 'https://bolls.life', rel: 'noopener', text: 'bolls.life' }), '.'),
-    h('h2', { text: 'Contact' }),
-    h('p', null, 'Questions or a problem with the site? Email ', h('a', { href: `mailto:${CONTACT_EMAIL}`, text: CONTACT_EMAIL }), '.'));
+  $main.append(aboutContent(h));
 }
 
 function renderPrivacy() {
-  setTitle('Privacy');
-  prose('Privacy',
-    h('p', { text: 'This covers the Scroll website and the Scroll apps for iPhone, iPad and Android. Scroll is made by Okeke LLC.' }),
-    h('h2', { text: 'What Scroll collects' }),
-    h('p', { text: 'Nothing. There are no accounts, no ads, no analytics and no tracking. Scroll does not ask for your name, email, contacts or location.' }),
-    h('h2', { text: 'What stays on your device' }),
-    h('p', { text: 'Verses and chapters you save, the translation you last used, and your text size and theme are stored only on your device (in the app, or in this browser for the website). They are never sent to us. Deleting the app or clearing this site’s data in your browser removes them.' }),
-    h('h2', { text: 'Where Bible text comes from' }),
-    h('p', null,
-      'When you open a chapter or search, Scroll requests the text from ',
-      h('a', { href: 'https://bolls.life', rel: 'noopener', text: 'bolls.life' }),
-      ', a public Bible service. Like any website, that service and our web host (Microsoft Azure) can see technical details of the request, such as your IP address and which chapter was requested. Scroll adds no identifiers to these requests.'),
-    h('h2', { text: 'Sharing' }),
-    h('p', { text: 'When you share or copy a verse, Scroll hands the text and a link to the app you choose. Nothing is shared unless you do it.' }),
-    h('h2', { text: 'Children' }),
-    h('p', { text: 'Scroll is suitable for all ages and collects no personal information from anyone.' }),
-    h('h2', { text: 'Contact' }),
-    h('p', null, 'Questions about privacy? Email ', h('a', { href: `mailto:${CONTACT_EMAIL}`, text: CONTACT_EMAIL }), '.'),
-    h('p', { class: 'prose-small', text: 'Last updated November 16, 2026.' }));
+  $main.append(privacyContent(h));
 }
 
 function renderNotFound() {
-  setTitle('Page not found');
   prose('That page is not here',
     h('p', { text: 'The address may be mistyped, or it points to a book or chapter that does not exist.' }),
     h('p', null,
@@ -939,12 +887,7 @@ function renderNotFound() {
 /* ---------- footer and start ---------- */
 
 function buildFooter() {
-  $foot.replaceChildren(
-    h('nav', { class: 'foot-links', 'aria-label': 'Site' },
-      h('a', { href: '/about', text: 'About' }),
-      h('a', { href: '/privacy', text: 'Privacy' }),
-      h('a', { href: APP_STORE_URL, rel: 'noopener', text: 'iPhone app' })),
-    h('p', { class: 'foot-note', text: `© ${new Date().getFullYear()} Okeke LLC` }));
+  $foot.replaceChildren(...footerContent(h, new Date().getFullYear()));
 }
 
 applyDisplay();
