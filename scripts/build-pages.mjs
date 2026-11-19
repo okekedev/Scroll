@@ -20,6 +20,7 @@ import { SITE_ORIGIN } from '../web/js/format.js';
 import { pageMeta, sitemapRoutes, SITE_NAME, HOME_DESCRIPTION } from '../web/js/meta.js';
 import {
   brandLink, footerContent, homeContent, fruitContent, fruitIntro, aboutContent, privacyContent,
+  APP_STORE_URL, PLAY_STORE_URL, CONTACT_EMAIL,
 } from '../web/js/pages.js';
 
 export const WEB_ROOT = join(dirname(fileURLToPath(import.meta.url)), '..', 'web');
@@ -192,6 +193,55 @@ function sitemap() {
   ].join('\n');
 }
 
+// Crawlers that feed AI search and assistants. "User-agent: *" already lets them
+// in; naming them makes it plain they are welcome. Same list as todaysdesk.com.
+const AI_CRAWLERS = [
+  'GPTBot', 'OAI-SearchBot', 'ChatGPT-User', 'ClaudeBot', 'Claude-SearchBot', 'Claude-User',
+  'anthropic-ai', 'Claude-Web', 'PerplexityBot', 'Perplexity-User', 'Google-Extended',
+  'Applebot-Extended', 'CCBot',
+];
+
+function robots() {
+  return [
+    'User-agent: *',
+    'Allow: /',
+    '',
+    '# AI crawlers: explicitly allowed',
+    ...AI_CRAWLERS.map((name) => `User-agent: ${name}`),
+    'Allow: /',
+    '',
+    `Sitemap: ${SITE_ORIGIN}/sitemap.xml`,
+    '',
+  ].join('\n');
+}
+
+/** A plain-text summary of the site for AI assistants (llmstxt.org). Facts only. */
+function llms() {
+  return [
+    '# Scroll',
+    '',
+    '> Scroll is a free Bible reader built around the Fruits of the Spirit in Galatians 5:22-23. Read any chapter in the ESV, KJV, NASB or NLT, find the verses that mention each of the nine virtues, save what you want to come back to, and share a verse with a link that opens right on it. Scroll is a website and an app for iPhone, iPad and Android.',
+    '',
+    `- [Home](${SITE_ORIGIN}/): Galatians 5:22-23, with each virtue linked to its verses`,
+    ...FRUITS.map((fruit) => `- [Bible verses about ${fruit.term}](${SITE_ORIGIN}/fruit/${fruit.slug})`),
+    `- [About](${SITE_ORIGIN}/about): what Scroll is, the translations and their copyright notices`,
+    `- [Privacy](${SITE_ORIGIN}/privacy)`,
+    '',
+    '## Facts',
+    '',
+    `- Where to get it: the website, the App Store for iPhone and iPad (named "Scroll: Fruit of the Spirit", ${APP_STORE_URL}), and Google Play for Android (named "Scroll: Bible Verses", ${PLAY_STORE_URL}).`,
+    '- The nine Fruits of the Spirit: love, joy, peace, patience, kindness, goodness, faithfulness, gentleness and self-control.',
+    '- Translations: English Standard Version (ESV, the default), King James Version (KJV), New American Standard Bible (NASB) and New Living Translation (NLT).',
+    `- Addresses: a chapter is ${SITE_ORIGIN}/ESV/43/3/ (translation, book number from 1 for Genesis to 66 for Revelation, then chapter; book 43 is John). A verse is ${SITE_ORIGIN}/ESV/43/3/16 and a run of verses is ${SITE_ORIGIN}/ESV/43/3/16-18.`,
+    '- Sharing: a shared verse is the verse text, its reference and translation, and a link to that verse.',
+    '- Price: free. No account, no ads and no tracking. Saved verses and chapters stay on your device.',
+    '- Bible text is loaded from bolls.life, a public Bible service.',
+    `- Support: ${CONTACT_EMAIL}`,
+    '- Made by Okeke LLC, Wichita Falls, Texas, https://okeke.us/',
+    '',
+  ].join('\n');
+}
+
 /** Every generated file: path under web/ → contents. */
 export function buildFiles() {
   const files = new Map();
@@ -226,7 +276,8 @@ export function buildFiles() {
   files.set('shell.html', page({ generic: true }));
 
   files.set('sitemap.xml', sitemap());
-  files.set('robots.txt', `User-agent: *\nAllow: /\n\nSitemap: ${SITE_ORIGIN}/sitemap.xml\n`);
+  files.set('robots.txt', robots());
+  files.set('llms.txt', llms());
   files.set(`${INDEXNOW_KEY}.txt`, INDEXNOW_KEY); // the key and nothing else, not even a newline
 
   return files;

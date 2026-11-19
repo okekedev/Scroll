@@ -39,8 +39,8 @@ Pushing changes under `web/` to `main` runs the tests and deploys to Azure Stati
 Fruit of the Spirit pages, About and Privacy are also real HTML files with their own title,
 description, canonical address and finished content, so search engines and link previews can
 read them without JavaScript. `scripts/build-pages.mjs` writes them, along with `sitemap.xml`,
-`robots.txt`, the fallback page (`shell.html`, served for chapters and every other address) and
-the IndexNow key file. The words come from `web/js/pages.js` and the titles from
+`robots.txt`, `llms.txt` (a plain summary for AI assistants), the fallback page (`shell.html`,
+served for chapters and every other address) and the IndexNow key file. The words come from `web/js/pages.js` and the titles from
 `web/js/meta.js`, the same code the app runs in the browser. After changing either file, run
 the script and commit what it writes; the tests fail if the pages on disk are out of date.
 

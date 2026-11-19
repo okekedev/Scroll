@@ -99,6 +99,14 @@ test('the host falls back to the generic page and never to the home page', async
   assert.ok(config.navigationFallback.exclude.includes('/*.xml'));
 });
 
+test('llms.txt lists the same pages as the sitemap', () => {
+  const llms = files.get('llms.txt');
+  for (const route of sitemapRoutes()) {
+    const url = ORIGIN + pageMeta(route).path;
+    assert.ok(llms.includes(`(${url})`), `llms.txt is missing ${url}`);
+  }
+});
+
 test('the IndexNow key file holds its own name', () => {
   assert.match(INDEXNOW_KEY, /^[0-9a-f]{32}$/);
   assert.equal(files.get(`${INDEXNOW_KEY}.txt`).trim(), INDEXNOW_KEY);
