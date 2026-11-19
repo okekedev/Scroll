@@ -809,8 +809,8 @@ body.has-selection .foot { padding-bottom: 5.5rem; }
   font-size: 0.875rem;
 }
 .foot-links { display: flex; flex-wrap: wrap; gap: 0.25rem 1.25rem; }
-.foot-links a { color: var(--muted); }
-.foot-links a:hover { color: var(--teal); }
+.foot-links a, .foot-note a { color: var(--muted); }
+.foot-links a:hover, .foot-note a:hover { color: var(--teal); }
 .foot-note { margin: 0; }
 
 .toast {

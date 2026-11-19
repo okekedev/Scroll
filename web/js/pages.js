@@ -22,7 +22,7 @@ export function footerContent(h, year) {
       h('a', { href: '/privacy', text: 'Privacy' }),
       h('a', { href: APP_STORE_URL, rel: 'noopener', text: 'iPhone app' }),
       h('a', { href: PLAY_STORE_URL, rel: 'noopener', text: 'Android app' })),
-    h('p', { class: 'foot-note', text: `© ${year} Okeke LLC` }),
+    h('p', { class: 'foot-note' }, `© ${year} `, h('a', { href: 'https://okeke.us/', text: 'Okeke LLC' })),
   ];
 }
 
